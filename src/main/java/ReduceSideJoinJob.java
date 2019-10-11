@@ -1,0 +1,2 @@
+public class ReduceSideJoinJob {
+}
