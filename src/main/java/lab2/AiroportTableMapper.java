@@ -11,4 +11,8 @@ import javafx.util.Pair;
 public class AirportTableMapper extends Mapper<LongWritable, Text, ComponentKey, Text> {
     /*в.разрабатываем map функцию для каждого из набора данных, которая генерирует  WritableComparable ключа и Writable данных
     для списка аэропортов эта функция в качестве value отправляет имя аэропорта.*/
+    @Override
+    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+
+    }
 }
