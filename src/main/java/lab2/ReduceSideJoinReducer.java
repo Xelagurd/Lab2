@@ -4,6 +4,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 public class ReduceSideJoinReducer extends Reducer<ComponentKey, Text, Text, Text> {
     /*е. Разрабатываем reduce функцию, которая берет первую строку, извлекает из нее
@@ -12,6 +13,10 @@ public class ReduceSideJoinReducer extends Reducer<ComponentKey, Text, Text, Tex
     @Override
     protected void reduce(ComponentKey key, Iterable<Text> values, Context context) throws
             IOException, InterruptedException {
-
+        Iterator it = values.iterator();
+        Double min = 2e9, max = -2e9, currentDelay, sum = 0.0;
+        int counter = 0;
+        String airportName = it.next().toString();
+        
     }
 }
