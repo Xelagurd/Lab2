@@ -27,6 +27,7 @@ public class ReduceSideJoinReducer extends Reducer<ComponentKey, Text, Text, Tex
             if (currentDelay == 0.0) {
                 continue;
             }
+            counter++;
         }
     }
 }
