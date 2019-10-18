@@ -11,6 +11,9 @@ public class AirportIDOnlyComparator extends WritableComparator {
 
     @Override
     public int compare(WritableComparable a, WritableComparable b) {
+        ComponentKey x = (ComponentKey) a;
+        ComponentKey y = (ComponentKey) b;
 
+        return x.firstPartOnlyComparator(y);
     }
 }
