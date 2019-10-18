@@ -9,8 +9,21 @@ public class ComponentKey implements WritableComparable<ComponentKey> {
     private String airportID;
     private int flag;
 
+    public ComponentKey() {
+        this.airportID = "init";
+        this.flag = -1;
+    }
+
     public ComponentKey(String airportID, int flag) {
         this.airportID = airportID;
         this.flag = flag;
+    }
+
+    public String getAirportID() {
+        return airportID;
+    }
+
+    public int getflag() {
+        return flag;
     }
 }
