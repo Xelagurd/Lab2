@@ -21,7 +21,7 @@ public class ReduceSideJoinJob {
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
         job.setMapOutputKeyClass(ComponentKey.class);
-        
+
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
         job.setNumReduceTasks(2);
