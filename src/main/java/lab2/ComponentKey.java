@@ -2,6 +2,7 @@ package lab2;
 
 import org.apache.hadoop.io.WritableComparable;
 
+import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
@@ -33,6 +34,13 @@ public class ComponentKey implements WritableComparable<ComponentKey> {
     public void write(DataOutput out) throws IOException {
         out.writeChars(airportID);
         out.writeInt(flag);
+    }
+
+    public void readFields(DataInput in) throws IOException {
+        String line = in.readLine();
+        int size = line.length();
+        flag = line.charAt(size - 1);
+        airportID = line.substring(0, size - 1);
     }
 
     public int firstPartOnlyComparator(ComponentKey other) {
