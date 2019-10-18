@@ -9,5 +9,8 @@ public class AirportIDOnlyComparator extends WritableComparator {
         super(ComponentKey.class, true);
     }
 
-    
+    @Override
+    public int compare(WritableComparable a, WritableComparable b) {
+
+    }
 }
