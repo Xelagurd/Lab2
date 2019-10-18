@@ -15,5 +15,6 @@ public class AirportTableMapper extends Mapper<LongWritable, Text, ComponentKey,
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         AirportTableWritable obj = new AirportTableWritable(value.toString());
         Pair<String, String> pair = obj.getPairWithName();
+        context.write(new ComponentKey(pair.getKey(), 0), new Text(pair.getValue()));
     }
 }
