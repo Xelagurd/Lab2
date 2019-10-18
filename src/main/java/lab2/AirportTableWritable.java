@@ -14,7 +14,7 @@ public class AirportTableWritable {
             index = table.indexOf(",");
             id = table.substring(0, index);
             name = table.substring(index + 2, table.length() - 1);
-            pair = new Pair<>(id, name);
+            this.pair = new Pair<>(id, name);
         }
     }
 }

@@ -13,6 +13,14 @@ public class FlightTableWritable {
     public FlightTableWritable(String table) {
         if (table.length() > 1 && !table.contains("YEAR")){
             String[] parts = table.split(",");
+
+            if (parts.length < TOTAL) {
+                return;
+            }
+
+            String id = parts[AIRPORT_ID_INDEX];
+            String delay = parts[DELAY_INDEX];
+            this.pair = new Pair<>(id, delay);
         }
     }
 }
