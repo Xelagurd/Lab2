@@ -2,6 +2,9 @@ package lab2;
 
 import org.apache.hadoop.io.WritableComparable;
 
+import java.io.DataOutput;
+import java.io.IOException;
+
 public class ComponentKey implements WritableComparable<ComponentKey> {
     /*б. разрабатываем  WritableComparable ключа имеющий два столбца :
        AEROPORT_ID,индикатор набора данных (для набора данных с аэропортом = 0 , для перелетов =1)
@@ -31,7 +34,7 @@ public class ComponentKey implements WritableComparable<ComponentKey> {
         out.writeChars(airportID);
         out.writeInt(flag);
     }
-    
+
     public int firstPartOnlyComparator(ComponentKey other) {
         return airportID.compareTo(other.getAirportID());
     }
