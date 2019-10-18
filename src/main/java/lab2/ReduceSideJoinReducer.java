@@ -20,6 +20,13 @@ public class ReduceSideJoinReducer extends Reducer<ComponentKey, Text, Text, Tex
 
         while (it.hasNext()) {
             String s = it.next().toString();
+            if (s.length() == 0) {
+                continue;
+            }
+            currentDelay = new Double(s);
+            if (currentDelay == 0.0) {
+                continue;
+            }
         }
     }
 }
