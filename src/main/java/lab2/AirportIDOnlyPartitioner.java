@@ -9,6 +9,7 @@ public class AirportIDOnlyPartitioner extends Partitioner<ComponentKey, Text> {
     }
 
     public int getPartition(ComponentKey key, Text value, int numReduceTasks) {
-
+        int b = new Integer(key.getAirportID());
+        return b % numReduceTasks;
     }
 }
