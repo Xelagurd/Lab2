@@ -1,5 +1,6 @@
 package lab2;
 
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 
 public class ReduceSideJoinJob {
@@ -12,6 +13,9 @@ public class ReduceSideJoinJob {
         job.setJarByClass(ReduceSideJoinJob.class);
         job.setJobName("Reduce Side Join");
 
-        
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(Text.class);
+        job.setNumReduceTasks(2);
+        System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 }
