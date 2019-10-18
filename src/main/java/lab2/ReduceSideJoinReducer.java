@@ -17,6 +17,9 @@ public class ReduceSideJoinReducer extends Reducer<ComponentKey, Text, Text, Tex
         Double min = 2e9, max = -2e9, currentDelay, sum = 0.0;
         int counter = 0;
         String airportName = it.next().toString();
-        
+
+        while (it.hasNext()) {
+            String s = it.next().toString();
+        }
     }
 }
