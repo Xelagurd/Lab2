@@ -13,6 +13,7 @@ public class AirportTableMapper extends Mapper<LongWritable, Text, ComponentKey,
     для списка аэропортов эта функция в качестве value отправляет имя аэропорта.*/
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-
+        AirportTableWritable obj = new AirportTableWritable(value.toString());
+        Pair<String, String> pair = obj.getPairWithName();
     }
 }
