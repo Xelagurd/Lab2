@@ -36,5 +36,9 @@ public class ReduceSideJoinReducer extends Reducer<ComponentKey, Text, Text, Tex
             }
             sum += currentDelay;
         }
+
+        if (counter > 0) {
+            String result = "".concat("Min: ".concat(min.toString().concat(", ")));
+        }
     }
 }
