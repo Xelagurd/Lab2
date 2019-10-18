@@ -20,6 +20,7 @@ public class ReduceSideJoinJob {
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AirportTableMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
+        job.setPartitionerClass(AirportIDOnlyPartitioner.class);
         job.setMapOutputKeyClass(ComponentKey.class);
 
         job.setOutputKeyClass(Text.class);
