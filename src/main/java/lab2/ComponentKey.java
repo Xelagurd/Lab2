@@ -26,4 +26,10 @@ public class ComponentKey implements WritableComparable<ComponentKey> {
     public int getflag() {
         return flag;
     }
+
+    public int compareTo(ComponentKey other) {
+        int x = airportID.compareTo(other.getAirportID());
+
+        return x;
+    }
 }
