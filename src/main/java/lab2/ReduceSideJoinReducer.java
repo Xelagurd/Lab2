@@ -28,6 +28,13 @@ public class ReduceSideJoinReducer extends Reducer<ComponentKey, Text, Text, Tex
                 continue;
             }
             counter++;
+            if (counter == 0 || max < currentDelay) {
+                max = currentDelay;
+            }
+            if (counter == 0 || min > currentDelay) {
+                min = currentDelay;
+            }
+            sum += currentDelay;
         }
     }
 }
