@@ -40,6 +40,8 @@ public class ReduceSideJoinReducer extends Reducer<ComponentKey, Text, Text, Tex
         if (counter > 0) {
             String result = "".concat("Min: ".concat(min.toString().concat(", ")));
             result = result.concat("Max: ".concat(max.toString().concat(", ")));
+
+            context.write(new Text(airportName), new Text(result));
         }
     }
 }
