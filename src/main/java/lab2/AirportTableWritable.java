@@ -17,4 +17,8 @@ public class AirportTableWritable {
             this.pair = new Pair<>(id, name);
         }
     }
+
+    public javafx.util.Pair<String, String> getPairWithName() {
+        return pair;
+    }
 }

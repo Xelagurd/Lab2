@@ -23,4 +23,8 @@ public class FlightTableWritable {
             this.pair = new Pair<>(id, delay);
         }
     }
+
+    public Pair<String, String> getDelayPair() {
+        return pair;
+    }
 }
